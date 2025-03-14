@@ -5,6 +5,7 @@ const connectDB = require("./config/db");
 const jobRoutes = require("./routes/jobRoutes");
 
 const authRoutes = require('./routes/authRoutes');
+const reviewRoutes = require("./routes/reviewRoutes");
 const app = express();
 
 // Connect to DB
@@ -18,6 +19,7 @@ app.use(express.json());
 
 app.use('/api/auth', authRoutes);
 app.use("/api", jobRoutes);
+app.use("/api/reviews", reviewRoutes);
 
 // Start Server
 const PORT = process.env.PORT || 5000;
